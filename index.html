@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment-6</title>
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- style css -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="mulish">
+    <header class="container w-10/12 mx-auto">
+        <!-- Nav Bar -->
+        <nav class="flex justify-between items-center mt-14">
+            <h3 class="text-4xl font-black">ReTro</h3>
+            <div class="flex">
+                <ul class="hidden md:flex flex-row items-center gap-3">
+                    <li>
+                        <a class="tooltip iconBackground" data-tip="Home">
+                            <img class="" src="./icons/home.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip iconBackground" data-tip="Tooltip">
+                            <img src="./icons/pen.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip iconBackground" data-tip="Add">
+                            <img src="./icons/add-user.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip iconBackground" data-tip="Terms">
+                            <img src="./icons/flag.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <button class="common-Btn px-10 py-4 ml-6">Sign In</button>
+            </div>
+        </nav>
+    </header>
+    <main class="container w-10/12 mx-auto">
+        <!--Section 01: Banner section -->
+        <section class="mt-14">
+            <div class="h-[550px] bg-[url('./images/bgbanner.png')] bg-no-repeat bg-cover bg-[#12132D] rounded-[2rem] flex flex-col lg:flex-row gap-7 lg:gap-16 p-4 md:p-8 lg:p-24">
+                <div class="lg:w-7/12 flex-col lg:flex-row space-y-6">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight font-black text-white text-center md:text-start">Welcome to the<br><span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                    <p class="text-lg md:text-xl font-medium opacity-75 text-white md:max-w-[25rem] text-center md:text-start">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <div class="bg-white flex justify-between items-center rounded-[50px] max-w-[25rem] p-2">
+                        <input id="searchField" class="pl-6 outline-none w-20 md:w-full" type="text" placeholder="Search here">
+                        <button onclick="handleSearch ()" class="common-Btn px-7 lg:px-10 py-2 lg:py-4 ">Search</button>
+                    </div>
+                </div>
+                <div class="lg:w-5/12 flex items-center">
+                    <div class="bg-white p-8 lg:p-12 text-2xl font-medium rounded-[2rem] w-full space-y-2">
+                        <div class="flex justify-between opacity-80">
+                            <p>Registered Users</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between opacity-80">
+                            <p>Forum</p>
+                            <p>05</p>
+                        </div>
+                        <div class="flex justify-between opacity-80">
+                            <p>Topics</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between opacity-80">
+                            <p>Replies</p>
+                            <p>01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 02: Let's Discuss  -->
+        <section class="mt-20">
+            <!-- loading  -->
+            <div id="loadingSpinner" class="text-center my-20 hidden">
+                <span class="loading loading-spinner text-primary"></span>
+                <span class="loading loading-spinner text-secondary"></span>
+                <span class="loading loading-spinner text-accent"></span>
+                <span class="loading loading-spinner text-neutral"></span>
+            </div>
+            <div class="text-center max-w-[43rem] mx-auto">
+                <h3 class="text-[2.5rem] font-black">Let’s Discuss</h3>
+                <p class="inter text-lg opacity-70">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+
+            <!-- card section -->
+            <div id="cardSection" class="mt-20 flex flex-col lg:flex-row gap-5">
+                <div id="postsContainer" class="lg:w-8/12">
+                    
+                </div>
+                <!-- Title -->
+                <div id="titleCardContainer" class="lg:w-4/12  h-min bg-[#F3F3F5] rounded-3xl p-6">
+                    <div class="flex justify-between items-center pb-5">
+                        <p class="text-xl font-bold">Title</p>
+                        <p class="inter opacity-80">Mark as read(<span id="totalReadCard">0</span>)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 03: Join Our Forum  -->
+        <section class="mt-20">
+            <div class="hero min-h-[25rem] bg-[#12132D] rounded-3xl">
+                <div class="hero-content flex-col lg:flex-row text-white">
+                  <div class="p-4 md:p-12">
+                    <h1 class="text-4xl md:text-5xl font-bold">Join Our Forum</h1>
+                    <p class="py-6 opacity-80">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                    
+                    <button class="common-Btn px-10 py-4  ml-6">Registered Now</button>
+                  </div>
+                  <img src="./images/joinforum.png" />
+                </div>
+            </div>
+        </section>
+
+        <!--Section 04: Latest Posts  -->
+        <section class="mt-20">
+            <div class="text-center max-w-[43rem] mx-auto">
+                <h3 class="text-[2.5rem] font-black">Latest Posts</h3>
+                <p class="inter text-lg opacity-70">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+            <!-- cards -->
+            <div id="latestPostCardContainer" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+            </div>
+        </section>
+
+    </main>
+    <!-- Section 05:  footer -->
+    <footer class="h-[450px] mt-20 footer bg-[#F3F3F5] flex flex-col items-center justify-center gap-7">
+        <div class=" max-w-[43rem] mx-auto flex flex-col items-center space-y-4">
+            <h3 class="text-[2.5rem] font-black text-center">ReTro</h3>
+            <p class="inter text-lg opacity-70 text-center">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        </div> 
+           
+        <div class="flex gap-5">
+            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt=""></img></a>
+
+            <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png" alt=""></a>
+
+            <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt=""></a>
+
+            <a href="https://www.github.com" target="_blank"><img src="images/github.png" alt=""></a>
+        </div>
+        <hr>
+        <div class="border-t border-dashed border-[#12132D40] w-10/12"></div>
+        <p class="opacity-65  text-center">2024, All Rights Reserved.</p>
+      </footer>
+
+    <script src="./js/retro.js"></script>
+
+</body>
+
+</html>
