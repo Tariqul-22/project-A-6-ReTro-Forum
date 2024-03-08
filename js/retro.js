@@ -116,34 +116,31 @@ const displayLatestPosts = (latestPosts) => {
     const latestPostCardContainer = document.getElementById('latestPostCardContainer');
  
     latestPosts.forEach(latestPost => {
-        // console.log(latestPost);
-
         const latestPostCard = document.createElement('div')
         latestPostCard.innerHTML = `
         <div class="p-6 h-full rounded-3xl border border-solid border-[#12132D26] space-y-3">
-        <div class="w-full bg-[#12132D40] rounded-[1.25rem]">
-            <img class="rounded-[1.25rem]" src="${latestPost?.cover_image}" alt="">
-        </div>
-        <div class="flex gap-3">
-            <img src="./icons/calendar.png" alt="">
-            <p class="opacity-70">${latestPost?.author?.posted_date || 'No publish date'}</p>
-        </div>
-        <h3 class="text-lg font-extrabold">${latestPost?.title}</h3>
-        <p class="opacity-75">${latestPost?.description}</p>
-        <div class="flex gap-4">
-            <div>
-                <img class="w-11 rounded-[50%]" src="${latestPost?.profile_image}" alt="">
+            <div class="w-full bg-[#12132D40] rounded-[1.25rem]">
+                <img class="rounded-[1.25rem]" src="${latestPost?.cover_image}" alt="">
             </div>
-            <div>
-                <h4 class="font-bold text-lg">${latestPost?.author?.name}</h4>
-                <p class="text-sm">${latestPost?.author?.designation || 'Unknown'}</p>
+            <div class="flex gap-3">
+                <img src="./icons/calendar.png" alt="">
+                <p class="opacity-70">${latestPost?.author?.posted_date || 'No publish date'}</p>
+            </div>
+            <h3 class="text-lg font-extrabold">${latestPost?.title}</h3>
+            <p class="opacity-75">${latestPost?.description}</p>
+            <div class="flex gap-4">
+                <div>
+                    <img class="w-11 rounded-[50%]" src="${latestPost?.profile_image}" alt="">
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">${latestPost?.author?.name}</h4>
+                    <p class="text-sm">${latestPost?.author?.designation || 'Unknown'}</p>
+                </div>
             </div>
         </div>
-    </div>
         `
         latestPostCardContainer.appendChild(latestPostCard);
-    });
-   
+    }); 
 }
 
 const toggleLoadingSpinner = (isLoading) =>{
